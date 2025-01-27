@@ -7,8 +7,8 @@ body: |-
 
   import (
     "net"
-    "time"
-
+    "os"
+  
     "github.com/cloudwego/kitex/pkg/klog"
     "github.com/cloudwego/kitex/pkg/rpcinfo"
     {{- if eq .Codec "thrift"}}
@@ -17,9 +17,10 @@ body: |-
     "github.com/cloudwego/kitex/server"
     kitexlogrus "github.com/kitex-contrib/obs-opentelemetry/logging/logrus"
     "{{.Module}}/conf"
+    "{{.Module}}/biz/dal"
+    "{{.Module}}/biz/dal/mysql"
+    "{{.Module}}/biz/dal/query"
     "{{.ImportPath}}/{{ToLower .ServiceName}}"
-    "go.uber.org/zap/zapcore"
-    "gopkg.in/natefinch/lumberjack.v2"
   )
 
   func main() {
