@@ -1,4 +1,4 @@
-path: cmd/gen/main.go
+path: biz/dal/model.go
 update_behavior:
   type: skip
 body: |-
