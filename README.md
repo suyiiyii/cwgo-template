@@ -13,7 +13,7 @@
 在原有的生成命令末尾添加 `-template https://github.com/suyiiyii/cwgo-template` 参数
 
 ```shell
-cwgo server -type RPC ... -template https://github.com/suyiiyii/cwgo-template
+cwgo server --type RPC ... --template https://github.com/suyiiyii/cwgo-template
 ``` 
 
 ## 详细更改
@@ -28,3 +28,6 @@ cwgo server -type RPC ... -template https://github.com/suyiiyii/cwgo-template
 
 * 移除多环境配置文件，改为使用 viper 管理的单一配置文件，支持环境变量覆盖
 * 移除文件日志，改为直接打印到控制台
+
+## 参考
+https://www.cloudwego.io/zh/docs/cwgo/tutorials/templete-extension/
