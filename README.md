@@ -13,7 +13,7 @@
 在原有的生成命令末尾添加 `-template https://github.com/suyiiyii/cwgo-template` 参数
 
 ```shell
-cwgo gen server -type RPC ... -template https://github.com/suyiiyii/cwgo-template
+cwgo server -type RPC ... -template https://github.com/suyiiyii/cwgo-template
 ``` 
 
 ## 详细更改
