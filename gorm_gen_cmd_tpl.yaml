@@ -1,0 +1,26 @@
+path: cmd/gorm_gen/main.go
+update_behavior:
+  type: skip
+body: |-
+  package main
+  
+  import (
+    "gorm.io/gen"
+    "{{.Module}}/biz/dal/mysql"
+    "{{.Module}}/biz/dal/model"
+  )
+  
+  func main() {
+  
+    mysql.Init()
+    db := mysql.DB
+    
+    g := gen.NewGenerator(gen.Config{
+    OutPath: "biz/dal/query",
+    Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface,
+    })
+    
+    g.UseDB(db)
+    g.ApplyInterface(func(model.Querier) {}, model.User{})
+    g.Execute()
+  }

@@ -1,0 +1,18 @@
+path: cmd/gorm/main.go
+update_behavior:
+  type: skip
+body: |-
+  package main
+  
+  import (
+    "{{.Module}}/biz/dal/mysql"
+    "{{.Module}}/biz/dal/model"
+  )
+    
+  func main() {
+  	mysql.Init()
+  	err := mysql.DB.AutoMigrate(&model.User{})
+  	if err != nil {
+  		panic(err)
+  	}
+  }
