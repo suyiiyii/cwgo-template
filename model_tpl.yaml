@@ -1,4 +1,4 @@
-path: biz/dal/model.go
+path: biz/dal/model/model.go
 update_behavior:
   type: skip
 body: |-
