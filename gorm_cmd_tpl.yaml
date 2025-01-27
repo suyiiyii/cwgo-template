@@ -5,8 +5,8 @@ body: |-
   package main
   
   import (
-    "{{.Module}}/biz/dal/mysql"
     "{{.Module}}/biz/dal/model"
+    "{{.Module}}/biz/dal/mysql"
   )
     
   func main() {

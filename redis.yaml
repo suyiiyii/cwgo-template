@@ -7,8 +7,9 @@ body: |-
   import (
     "context"
 
-    "github.com/redis/go-redis/v9"
     "{{.Module}}/conf"
+  
+    "github.com/redis/go-redis/v9"
   )
 
   var (

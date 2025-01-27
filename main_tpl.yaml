@@ -9,6 +9,12 @@ body: |-
     "net"
     "os"
   
+    "{{.Module}}/conf"
+    "{{.Module}}/biz/dal"
+    "{{.Module}}/biz/dal/mysql"
+    "{{.Module}}/biz/dal/query"
+    "{{.ImportPath}}/{{ToLower .ServiceName}}"
+  
     "github.com/cloudwego/kitex/pkg/klog"
     "github.com/cloudwego/kitex/pkg/rpcinfo"
     {{- if eq .Codec "thrift"}}
@@ -16,15 +22,12 @@ body: |-
     {{- end }}
     "github.com/cloudwego/kitex/server"
     kitexlogrus "github.com/kitex-contrib/obs-opentelemetry/logging/logrus"
-    "{{.Module}}/conf"
-    "{{.Module}}/biz/dal"
-    "{{.Module}}/biz/dal/mysql"
-    "{{.Module}}/biz/dal/query"
-    "{{.ImportPath}}/{{ToLower .ServiceName}}"
   )
 
   func main() {
+    // use go run cmd/gorm/main.go to migrate the database
     dal.Init()
+    // use go run cmd/gorm_gen/main.go to generate the code
     query.SetDefault(mysql.DB)
     opts := kitexInit()
 
