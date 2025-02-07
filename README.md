@@ -28,6 +28,7 @@ cwgo server --type RPC ... --template https://github.com/suyiiyii/cwgo-template.
 
 * 移除多环境配置文件，改为使用 viper 管理的单一配置文件，内嵌到二进制文件，并支持环境变量覆盖
 * 移除文件日志，改为直接打印到控制台
+* 数据库使用 mysql 并且添加自动创建数据库功能
 
 ## 参考
 
