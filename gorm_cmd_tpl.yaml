@@ -11,7 +11,7 @@ body: |-
     
   func main() {
   	mysql.Init()
-  	err := mysql.DB.AutoMigrate(&model.User{})
+  	err := mysql.DB.Set("gorm:table_options", "CHARSET=utf8mb4").AutoMigrate(&model.User{})
   	if err != nil {
   		panic(err)
   	}
