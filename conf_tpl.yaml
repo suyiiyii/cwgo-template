@@ -101,6 +101,12 @@ body: |-
   	if err != nil {
   		panic(err)
   	}
+  
+  	// Manually parse the registry address environment variable
+    registryAddress := viper.GetString("registry.registry_address")
+    if registryAddress != "" {
+    	conf.Registry.RegistryAddress = strings.Split(registryAddress, ",")
+    }
 
   	if err := validator.Validate(conf); err != nil {
   		klog.Error("validate config error - %v", err)
