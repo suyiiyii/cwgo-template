@@ -228,7 +228,7 @@ layouts:
     body: |-
       # Hertz HTTP Server Configuration
       hertz:
-        address: ":8888"
+        address: ":8080"
         service: "{{.ServiceName}}"
         enable_pprof: true
         enable_gzip: true
