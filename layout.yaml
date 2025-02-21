@@ -547,7 +547,7 @@ layouts:
         dbName := conf.GetConf().Hertz.Service
         db.Raw("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?", dbName).Scan(&count)
         if count == 0 {
-          klog.Warn("Database not found, creating database")
+          hlog.Warn("Database not found, creating database")
           db.Exec(fmt.Sprintf("CREATE DATABASE `%s`", dbName))
         }
 
