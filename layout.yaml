@@ -28,8 +28,10 @@ layouts:
       )
 
       func main() {
-        // init dal
+        // use `go run cmd/gorm/main.go` to migrate the database
         // dal.Init()
+        // use `go run cmd/gorm_gen/main.go` to generate the code
+        // query.SetDefault(mysql.DB)
       	address := conf.GetConf().Hertz.Address
       	h := server.New(server.WithHostPorts(address))
 
@@ -433,6 +435,7 @@ layouts:
       /.vscode
       /output
       *.local.yml
+      .env
 
   - path: biz/utils/resp.go
     delims:
