@@ -25,9 +25,9 @@ body: |-
   )
 
   func main() {
-    // use go run cmd/gorm/main.go to migrate the database
+    // use `go run cmd/gorm/main.go` to migrate the database
     dal.Init()
-    // use go run cmd/gorm_gen/main.go to generate the code
+    // use `go run cmd/gorm_gen/main.go` to generate the code
     query.SetDefault(mysql.DB)
     opts := kitexInit()
 
