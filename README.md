@@ -33,3 +33,5 @@ cwgo server --type RPC ... --template https://github.com/suyiiyii/cwgo-template.
 ## 参考
 
 https://www.cloudwego.io/zh/docs/cwgo/tutorials/templete-extension/
+
+另有 HTTP 模板，欢迎使用：https://github.com/suyiiyii/cwgo-template/tree/hertz
