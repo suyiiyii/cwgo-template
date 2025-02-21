@@ -10,10 +10,10 @@
 
 ## 使用方式
 
-在原有的生成命令末尾添加 `--template https://github.com/suyiiyii/cwgo-template.git` 参数
+在原有的生成命令末尾添加 `-template https://github.com/suyiiyii/cwgo-template.git -branch hertz` 参数
 
 ```shell
-cwgo server --type HTTP ... --template https://github.com/suyiiyii/cwgo-template.git -branch hertz
+cwgo server -type HTTP ... -template https://github.com/suyiiyii/cwgo-template.git -branch hertz
 ```
 
 ## 详细更改
