@@ -16,6 +16,18 @@
 cwgo server -type HTTP ... -template https://github.com/suyiiyii/cwgo-template.git -branch hertz
 ```
 
+## 开发最佳实践
+
+1. 编写 proto 文件，并使用相关注解定义 http 接口参数
+2. 使用 `cwgo` 工具生成 hertz 框架脚手架代码（见上文）
+3. 修改 `/biz/dal/model/model.go` 文件，将 User 结构体重名为你的模型名称，并根据实际情况修改字段
+4. 在模块根目录下创建 .env 文件，并配置数据库连接信息
+5. 在模块根目录下执行 `go run cmd/gorm/main.go` 生成数据库表（会自动创建独立数据库，数据库名为服务名称）
+6. 修改 `/biz/dal/model/model.go` 文件，在 Querier 结构体中添加自定义的 sql 语句
+7. 在模块根目录下执行 `go run cmd/gorm_gen/main.go` 生成类型安全的数据库操作代码
+8. 在 `/biz/service` 目录下实现业务逻辑
+9. 根目录下执行 `go run main.go` 启动服务
+
 ## 详细更改
 
 在原来的基础上添加了
