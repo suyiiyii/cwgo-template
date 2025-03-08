@@ -8,6 +8,10 @@ body: |-
     "gorm.io/gorm"
   )
   
+  var AllModels = []interface{}{
+    &User{},
+  }
+  
   // rename to create your own model
   type User struct {
     gorm.Model
