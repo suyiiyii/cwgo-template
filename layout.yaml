@@ -501,6 +501,10 @@ layouts:
         "gorm.io/gorm"
       )
       
+      var AllModels = []interface{}{
+        &User{},
+      }
+      
       // rename to create your own model
       type User struct {
         gorm.Model
@@ -557,7 +561,7 @@ layouts:
         // migrate the database
         mysql.Init()
 
-        err = mysql.DB.Set("gorm:table_options", "CHARSET=utf8mb4").AutoMigrate(&model.User{})
+        err = mysql.DB.Set("gorm:table_options", "CHARSET=utf8mb4").AutoMigrate(model.AllModels...)
         if err != nil {
           panic(err)
         }
@@ -581,7 +585,7 @@ layouts:
         Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface,
         })
         
-        g.ApplyInterface(func(model.Querier) {}, model.User{})
+        g.ApplyInterface(func(model.Querier) {}, model.AllModels...)
         g.Execute()
       }
 
